@@ -45,6 +45,8 @@ export default function ThirdWave({ campaign_id, advertiserid, ad, firetoLine, p
                 setDataContainer(val)
                 return elem
             })
+
+         
             setLineData(data2)
         }
         else {
@@ -95,11 +97,13 @@ export default function ThirdWave({ campaign_id, advertiserid, ad, firetoLine, p
                   
                     elem["checkbox"] = true
                     dataContainer.push(elem.lineitem_id)
+                    console.log(elem.lineitem_id,dataContainer,"::::::")
                     setDataContainer(dataContainer)
-                    return elem
+                  
                 }
-                
+                return elem
             })
+              
             setLineData(data2)
          }
          else{
@@ -107,10 +111,11 @@ export default function ThirdWave({ campaign_id, advertiserid, ad, firetoLine, p
                 if(elem?.lineitem_id === id){
                     elem["checkbox"] = false
                     dataContainer[index] = ""
-                   
+                    
                     setDataContainer(dataContainer)
-                    return elem
+                   
                 }
+                return elem
                 
             })
             setLineData(data2)
@@ -125,10 +130,12 @@ export default function ThirdWave({ campaign_id, advertiserid, ad, firetoLine, p
                 if(elem?.line_item_id === id){
                   
                     elem["checkbox"] = true
-                    dataContainer.push(elem.line_item_id)
-                    setDataContainer2(dataContainer)
-                    return elem
+                  
+                    dataContainer2.push(elem.line_item_id)
+                    setDataContainer2(dataContainer2)
+                  
                 }
+                return elem
                 
             })
             setLineItemsDataDbm(data2)
@@ -140,8 +147,9 @@ export default function ThirdWave({ campaign_id, advertiserid, ad, firetoLine, p
                     dataContainer2[index] = ""
                    
                     setDataContainer2(dataContainer2)
-                    return elem
+                  
                 }
+                return elem
                 
             })
             setLineItemsDataDbm(data2)

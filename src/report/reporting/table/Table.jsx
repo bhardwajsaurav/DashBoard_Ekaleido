@@ -59,7 +59,7 @@ export function NewCampLineItems({ dataNewL, id ,DataCtr,ctrValCon,setCtrValCon,
 					return (
 						<div className="accordionCustom mb-2">
 
-							<Iconpage />
+							{/* <Iconpage /> */}
 
 
 							<div className="numNo">
@@ -167,7 +167,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 	const [Priview, setPriview] = useState()
 	const [PriviewData,setPriviewData] = useState()
 	const [ctrValCon, setCtrValCon] = useState()
-
+	console.log(dataContainer,dataContainer2,"[]]]]]]]]]]]]]]]")
 
 	async function MappingSave() {
 		const payLoad =
