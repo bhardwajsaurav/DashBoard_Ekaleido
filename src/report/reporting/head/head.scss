@@ -1,0 +1,67 @@
+.head_wrapper {
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+
+  display: grid;
+  grid-gap: 10%;
+  grid-template-columns: 55% 35%;
+  max-height: 65px;
+
+  .campaign_name {
+    display: flex;
+    padding: 1rem 1rem;
+    align-items: center;
+
+    .text {
+      font-weight: bold;
+    }
+
+    .icon {
+      margin: 0 0.5rem;
+      font-weight: bold;
+      color: #19a7e4;
+    }
+  }
+
+  .date_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      padding: 0.5rem;
+      border-radius: 10px;
+      background-color: #faf9f9;
+      outline: none;
+      border: none;
+    }
+
+    input:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .campaign_name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 778px) {
+  .head_wrapper .report_component {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .head_wrapper {
+    grid-template-columns: 100%;
+  }
+
+  .head_wrapper .date_wrapper {
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+}

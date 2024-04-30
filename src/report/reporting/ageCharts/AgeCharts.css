@@ -1,0 +1,63 @@
+.age_wrapper {
+  grid-column-start: 9;
+  grid-column-end: 21;
+  grid-row-start: 5;
+  grid-row-end: span 1;
+
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .head {
+    width: 95%;
+
+    .nav_btn {
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      &:not(&:last-child) {
+        margin-right: 1rem;
+      }
+
+      .btn-secondary,
+      .btn-secondary:link,
+      .btn-secondary:visited {
+        outline: none;
+        color: #7660ff !important;
+        border: 2px solid #7660ff !important;
+      }
+    }
+
+    .component_name {
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 1.5rem;
+
+      span {
+        margin-left: 10px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .bar_wrapper {
+    width: 95%;
+    position: relative;
+
+    canvas {
+      height: 80% !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .age_wrapper {
+    grid-column-start: 1;
+    grid-column-end: 21;
+    grid-row-start: 6;
+    grid-row-end: span 1;
+  }
+}

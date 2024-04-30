@@ -1,0 +1,109 @@
+// @import "../../../../variables";
+
+.insights_wrapper {
+	grid-column-start: 1;
+	grid-column-end: 21;
+	grid-row-start: 2;
+	grid-row-end: span 1;
+
+	min-height: 270px;
+	display: grid;
+	padding: 2rem;
+	overflow-x: auto;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 2rem;
+
+	.single_insight {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		padding: 0.8rem;
+		position: relative;
+		border-radius: 10px;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		aspect-ratio: 3 / 4;
+		transition: all 0.5s ease;
+
+		.icon {
+			border-radius: 50px;
+			padding: 5px;
+
+			svg {
+				color: #fff;
+			}
+		}
+
+		.data_title {
+			display: flex;
+			flex-direction: column;
+
+			.data {
+				font-family: Montserrat-ExtraBold;
+				font-size: 1.5rem;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+
+			.title {
+				font-size: 18px;
+				justify-self: flex-end;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.total_impression {
+		background-color: #ffd9d9;
+
+		.icon {
+			background-color: #ff6464;
+		}
+	}
+	.total_engagement {
+		background-color: #fffbd9;
+		.icon {
+			background-color: #ddce4d;
+		}
+	}
+	.engagement_rate {
+		background-color: #daffd9;
+		.icon {
+			background-color: #6be267;
+		}
+	}
+	.total_clicks {
+		background-color: #ffd9f9;
+		.icon {
+			background-color: #e370d2;
+		}
+	}
+	.ctr {
+		background-color: #d9faff;
+		.icon {
+			background-color: #48c9dc;
+		}
+	}
+	.spends {
+		background-color: #d9ddff;
+		.icon {
+			background-color: #5362e9;
+		}
+	}
+}
+
+.single_insight:hover {
+	transform: scale(1.1);
+	box-shadow: 0 2px 5px #ccc;
+}
+
+@media (max-width: 1000px) {
+	.insights_wrapper .single_insight .data_title .data {
+		font-size: 1.1rem;
+	}
+
+	.insights_wrapper .single_insight .data_title .title {
+		font-size: 16px;
+	}
+}

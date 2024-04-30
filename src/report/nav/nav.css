@@ -1,0 +1,45 @@
+.report_nav {
+  display: flex;
+  padding: 0 2rem;
+  max-height: 90px;
+  grid-column: 1 / 3;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 25%);
+  z-index: 10;
+
+  .nav-Menu {
+    font-size: 21px;
+    display: none;
+  }
+  .nav_options {
+    display: flex;
+
+    .nav_btn {
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      &:not(&:last-child) {
+        margin-right: 1rem;
+      }
+
+      .btn-secondary,
+      .btn-secondary:link,
+      .btn-secondary:visited {
+        outline: none;
+        color: #7660ff !important;
+        border: 2px solid #7660ff !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .report_nav {
+    z-index: 110;
+  }
+
+  .nav-Menu {
+    display: block !important;
+  }
+}

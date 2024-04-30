@@ -1,0 +1,90 @@
+.gender_wrapper {
+	grid-column-start: 1;
+	grid-column-end: 8;
+	grid-row-start: 5;
+	grid-row-end: span 1;
+
+	height: 30rem;
+	padding: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	.head {
+		span {
+			margin-left: 10px;
+			font-size: 1rem;
+		}
+
+		input.switch {
+			display: inline-block;
+			cursor: pointer;
+			height: 20px;
+			width: 50px;
+			position: relative;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		input.switch:checked::before {
+			background: #0ab534;
+		}
+		input.switch::before {
+			font-size: 18px;
+			color: #fff;
+			box-shadow: 0 0 1px 1px #ffffff;
+			content: "i  e";
+			display: block;
+			position: absolute;
+			background: #78b4f0;
+			width: 50px;
+			border-radius: 1px;
+			height: 25px;
+			top: -5px;
+			left: 0px;
+			text-align: center;
+		}
+		input.switch::after {
+			content: "";
+			display: block;
+			position: absolute;
+			background: #fff;
+			border-radius: 2px;
+			height: 21px;
+			width: 22px;
+			top: -3px;
+			left: 1px;
+			box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+			transition: all 300ms;
+		}
+		input.switch:checked::after {
+			left: 26px;
+		}
+		input.round.switch::after,
+		input.round.switch::before {
+			border-radius: 20px;
+		}
+	}
+
+	.donut_wrapper {
+		position: relative;
+		height: 100% !important;
+		width: 100% !important;
+
+		canvas {
+			height: 100% !important;
+			width: 100% !important;
+		}
+	}
+}
+
+
+@media (max-width:992px) {
+	.gender_wrapper {
+		grid-column-start: 1;
+		grid-column-end: 22;
+		grid-row-start: 5;
+		grid-row-end: span 1;
+		height: 41rem;
+	}
+}

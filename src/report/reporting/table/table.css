@@ -1,0 +1,159 @@
+
+.main-table{
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 4;
+  grid-row-end: span 1;
+
+.table_wrapper {
+  
+
+  width: 100%;
+  display: inline-block;
+  height: 50vh;
+  overflow: auto;
+
+  table {
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+
+    tbody {
+      overflow-y: scroll;
+
+      td:first-child {
+        padding-left: 30px;
+        padding-bottom: 14px;
+        padding-top: 14px;
+      }
+
+      tr:last-child {
+        border-bottom: none;
+      }
+
+      tr {
+        border-bottom: 1px solid #ccc;
+      }
+      td {
+        font-size: 0.8rem;
+      }
+    }
+
+    thead {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: #f1dbff;
+      border-radius: 20px 20px 0 0;
+
+      tr {
+        height: 100%;
+        padding: 10px;
+      }
+
+      .date-Th {
+        padding: 14px 0px 9px 30px;
+      }
+    }
+  }
+}
+
+
+.TableFixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #2e2c2c44;
+}
+
+.paganation{
+  position: absolute;
+  right: 65px;
+}
+}
+
+
+@media (max-width: 772px) {
+  .table_wrapper table {
+    width: 680px;
+  }
+}
+
+
+.accordionCustom{
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  align-items: center;
+  gap: 52px;
+
+}
+
+.pluswid {
+  width: 6%;
+  background-color: orange;
+  padding: 10px;
+  text-align: center;
+}
+.numNo {
+  width: 10%;
+  text-align: center;
+
+}
+
+.checkwid {
+  width: 10%;
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+.checkwid input {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.checkmark {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  left: 10px;
+  top: 13px;
+}
+
+
+
+
+.checkmark::after{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: "";
+  left: 6px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: none;
+
+  transform: rotate(45deg);
+}
+.checkwid input:checked ~ .checkmark {
+  background-color: #fb8332;
+}
+.checkwid input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.campaignsHeight{
+  max-height: 300px;
+  overflow: scroll;
+}

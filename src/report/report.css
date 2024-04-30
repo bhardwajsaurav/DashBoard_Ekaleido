@@ -1,0 +1,16 @@
+.reporting_wrapper {
+  display: grid;
+  grid-template-rows: 90px auto;
+  grid-template-columns: 20% 80%;
+}
+
+.report_component {
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 25%);
+}
+@media (max-width: 992px) {
+  .reporting_wrapper {
+    grid-template-columns: 100%;
+  }
+}
