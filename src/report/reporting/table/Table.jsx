@@ -315,13 +315,16 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 					</Button>
 				}
 
-				{
+				{ 
+					ServerSelect === "s3" ? null :
+
 					ServerSelect === "s2" && dataContainer2.length > 0 ? <Button variant="contained" onClick={() => {
 						setServerSelect("s3")
 						setBack(true)
 					}}>
 						Next
 					</Button> :
+					 
 						dataContainer.length > 0 && <Button variant="contained" onClick={() => {
 							setServerSelect("s2")
 

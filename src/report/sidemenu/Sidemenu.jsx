@@ -16,7 +16,7 @@ const Sidemenu = (props) => {
           ADVERTISER
         </button> */}
         
-        <button className="advertiser menu-btn" style={{background:( ServerSelect=== "new" ? "orange" : "")}} onClick={()=>{setServerSelect("new")}}>
+        <button className="advertiser menu-btn" style={{borderColor:( ServerSelect=== "new" ? "orange" : "")}} onClick={()=>{setServerSelect("new")}}>
           <AiOutlineAppstore />
            Campiangns
         </button>
@@ -24,7 +24,7 @@ const Sidemenu = (props) => {
           <HiOutlineDocumentText />
             Ad Server
         </button>
-        <button className="advertiser menu-btn" style={{background:( ServerSelect=== "s2" ? "orange" : "")}} onClick={()=>{setServerSelect("s2")}}>
+        <button className="advertiser menu-btn" style={{borderColor:( ServerSelect=== "s2" ? "orange" : "")}} onClick={()=>{setServerSelect("s2")}}>
           <AiOutlineAppstore />
          Dbm Server
         </button>
