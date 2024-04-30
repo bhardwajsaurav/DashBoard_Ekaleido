@@ -221,7 +221,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 		<>
 
 			<div style={{ display: (ServerSelect === "s1" ? "block" : "none") }}>
-				{
+				{	adserverdata ? 
 					adserverdata?.map((elem, index) => {
 						return (
 							<>
@@ -230,11 +230,13 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 						)
 					}
 					)
+					: <h5>Data Not found</h5>
 				}
 			</div>
 			<div style={{ display: (ServerSelect === "s2" ? "block" : "none") }}>
 
 				{
+					 dbm?
 					dbm?.map((elem, index) => {
 						return (
 							<>
@@ -242,7 +244,8 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 							</>
 						)
 					}
-					)
+					) 
+					: <h5>Data Not found</h5>
 				}
 			</div>
 
@@ -276,7 +279,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 		
 
 			<div style={{ display: (ServerSelect === "new" ? "block" : "none") }}>
-				{
+				{ newCampData ? 
 					newCampData?.map((elem, index) => {
 						return (
 							<>
@@ -285,7 +288,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 
 							</>
 						)
-					})
+					}) : <h5>Data Not found</h5>
 				}
 			</div>
 
