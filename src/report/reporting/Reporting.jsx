@@ -34,7 +34,7 @@ const Reporting = ({ ServerSelect,setServerSelect }) => {
 		fetchData()
 		fetchDataNew()
 		
-	}, [ServerSelect])
+	}, [ServerSelect,datepicker])
 
 
 
