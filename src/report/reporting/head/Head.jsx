@@ -93,7 +93,7 @@ const Head = ({ setDatePicker, datepicker, fetchData, fetchDataNew }) => {
 
 					<span>to</span>
 
-					<span style={{ display: clickCheck ? "block" : "none" }} onClick={() => { setClickCheck(false) }}>{datepicker.start_date} <SlCalender className='ms-1 calenderIcon'/></span>
+					<span style={{ display: clickCheck ? "block" : "none" }} onClick={() => { setClickCheck(false) }}>{datepicker.end_date} <SlCalender className='ms-1 calenderIcon'/></span>
 
 					<input type="date" style={{ display: clickCheck ? "none" : "block" }} name="end_date" value={datepicker.end_date} onChange={e => { setDatePicker({ ...datepicker, [e.target.name]: e.target.value }) }} />
 
