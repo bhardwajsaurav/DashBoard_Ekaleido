@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Pagination from "@mui/material/Pagination";
 import ModalpopUp from "../POP/Modalpop";
 import NewCamps from "../POP/NewCamps";
-import { Mapped, NewLineItems, Preview, UpdateRatio, getAdLineItems } from "../../../Apis";
+import { Mapped, NewLineItems, Preview, SubmitMapped, UpdateRatio, getAdLineItems } from "../../../Apis";
 import SaveModal from "../savemodal/SaveModal";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6";
@@ -139,6 +139,7 @@ export function InnerCTR({ capcha, campRatio, id, toggle, dataNewL, elem, index 
 				<div className="checkwid position-relative">
 					<label for="" class="relative"><input type="checkbox" name="ad" onClick={(e)=>{
 						linecheck(e)
+						
 					}}/><span class="checkmark"></span></label>
 				</div>
 				<div className="namewid">
@@ -166,13 +167,15 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 	const [CampaingnId, setCampaingnId] = useState()
 	const [Priview, setPriview] = useState()
 	const [PriviewData,setPriviewData] = useState()
-	const [ctrValCon, setCtrValCon] = useState()
-	console.log(dataContainer,dataContainer2,"[]]]]]]]]]]]]]]]")
+	const [ctrValCon, setCtrValCon] = useState([])
+	
 
 	async function MappingSave() {
 		const payLoad =
 			{ "dbm": dataContainer2, "adserver": dataContainer, "new_campaign": Name, "start_date": datepicker.start_date, "end_date": datepicker.end_date }
 		const data = await Mapped(payLoad)
+		const Save  = await SubmitMapped()
+		 
 		if (data?.status === 200) {
 			setServerSelect("status")
 			setTimeout(() => {
@@ -200,7 +203,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 				},
 			]
 		}
-		console.log(objdata)
+		
 		if ((CtrValue.ctrMax && CtrValue.ctrmin) && (CpcValue.cpcmax && CpcValue.cpcmin)) {
 			let data = await UpdateRatio(objdata)
 			setPriview(data)
@@ -255,12 +258,12 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 						<h6 className="mb-3">Click to Engagement Engagement Ratio</h6>
 						<div >
 						<div className="mb-3">
-						   <input type="text"  className="me-3" name= "ctrMax"  onChange={(e)=>{setCtrValue({...CtrValue , [e.target.name]: e.target.value})}}/>
-						   <input type="text" name="ctrmin" onChange={(e)=>{setCtrValue({...CtrValue , [e.target.name]: e.target.value})}} />
+						   <input type="text"  className="me-3" name= "ctrMax"  onChange={(e)=>{setCtrValue({...CtrValue , [e.target.name]: e.target.value})}} placeholder="CtrMax"/>
+						   <input type="text" name="ctrmin" onChange={(e)=>{setCtrValue({...CtrValue , [e.target.name]: e.target.value})}} placeholder="CtrMin"/>
 						</div>
 						<div className="mb-3">
-						   <input type="text" name="cpcmax" className="me-3" onChange={(e)=>{setCpcValue({...CpcValue , [e.target.name]: e.target.value})}} />
-						   <input type="text" name="cpcmin" onChange={(e)=>{setCpcValue({...CpcValue , [e.target.name]: e.target.value})}}  />
+						   <input type="text" name="cpcmax" className="me-3" onChange={(e)=>{setCpcValue({...CpcValue , [e.target.name]: e.target.value})}}  placeholder="CpcMax"/>
+						   <input type="text" name="cpcmin" onChange={(e)=>{setCpcValue({...CpcValue , [e.target.name]: e.target.value})}}  placeholder="CpcMin"/>
 						</div>
 	   
 						<div>

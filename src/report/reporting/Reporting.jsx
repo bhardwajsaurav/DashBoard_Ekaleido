@@ -21,6 +21,7 @@ const Reporting = ({ ServerSelect,setServerSelect }) => {
 		start_date: "30-04-2023",
 		end_date: "30-04-2024",
 	})
+	const [age, setAge] = React.useState('');
 
 	const [adserverdata, setAdserverData] = useState()
 	const [dbm, setDbm] = useState()
@@ -33,8 +34,8 @@ const Reporting = ({ ServerSelect,setServerSelect }) => {
 	useEffect(() => {
 		fetchData()
 		fetchDataNew()
-		
-	}, [ServerSelect,datepicker])
+		console.log("-----------------check")
+	}, [ServerSelect])
 
 
 
@@ -65,7 +66,7 @@ const Reporting = ({ ServerSelect,setServerSelect }) => {
 		<>
 			<div className="report_wrapper">
 
-				<Head setDatePicker={setDatePicker} datepicker={datepicker} fetchData={fetchData} fetchDataNew={fetchDataNew} />
+				<Head setDatePicker={setDatePicker} datepicker={datepicker} fetchData={fetchData} fetchDataNew={fetchDataNew} setAge={setAge} age={age}/>
 				{/* <Insights />
 			<IEEAGraph /> */}
 				<Table  datepicker={datepicker} setServerSelect={setServerSelect} adserverdata={adserverdata} dbm={dbm} ServerSelect={ServerSelect} newCampData={newCampData} setAdserverData ={setAdserverData} dataNewL={dataNewL} setDataNewL={setDataNewL} setNewCampData={setNewCampData}/>

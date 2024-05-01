@@ -7,8 +7,8 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { SlCalender } from "react-icons/sl";
 
-const Head = ({ setDatePicker, datepicker, fetchData, fetchDataNew }) => {
-	const [age, setAge] = React.useState('');
+const Head = ({ setDatePicker, datepicker, fetchData, fetchDataNew,setAge ,age}) => {
+	
 	const [clickCheck, setClickCheck] = React.useState(true);
 	const handleChange = (event) => {
 
@@ -51,8 +51,8 @@ const Head = ({ setDatePicker, datepicker, fetchData, fetchDataNew }) => {
 		}
 		if (event.target.value === "Lst") {
 			setDatePicker({
-				start_date: "24-01-2023",
-				end_date: "24-04-2024",
+				start_date: "1-05-2023",
+				end_date: "1-05-2024",
 
 			});
 		}
