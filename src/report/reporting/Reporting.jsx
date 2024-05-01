@@ -34,8 +34,8 @@ const Reporting = ({ ServerSelect,setServerSelect }) => {
 	useEffect(() => {
 		fetchData()
 		fetchDataNew()
-		console.log("-----------------check")
-	}, [ServerSelect])
+		
+	}, [ServerSelect,datepicker,age])
 
 
 

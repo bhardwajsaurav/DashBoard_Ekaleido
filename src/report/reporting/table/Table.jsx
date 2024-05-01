@@ -25,10 +25,10 @@ export function NewCampLineItems({ dataNewL, id ,DataCtr,ctrValCon,setCtrValCon,
         let val = []
          if(e.target.checked === true){
             let data2 = dataNewL?.data?.[id]?.filter((elem) => {
-                if(elem.campaign_id === id){
+                if(elem?.line_item_id === id){
                   
                     elem["checkbox"] = true
-                    ctrValCon.push(elem.campaign_id)
+                    ctrValCon.push(elem?.line_item_id)
                     setCtrValCon(ctrValCon)
                     return elem
                 }
@@ -38,7 +38,7 @@ export function NewCampLineItems({ dataNewL, id ,DataCtr,ctrValCon,setCtrValCon,
          }
          else{
             let data2 = dataNewL?.data?.[id]?.filter((elem) => {
-                if(elem.campaign_id === id){
+                if(elem?.line_item_id === id){
                     elem["checkbox"] = false
                     ctrValCon[index] = ""
                    
@@ -253,7 +253,7 @@ const Table = ({ datepicker, adserverdata, dbm, ServerSelect, setAdserverData, s
 			</div>
 
 
-				{ ctrValCon&&
+				{ ctrValCon.length >0&&
 						<div className="mb-5">
 						<h6 className="mb-3">Click to Engagement Engagement Ratio</h6>
 						<div >
